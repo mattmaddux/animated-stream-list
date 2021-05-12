@@ -12,7 +12,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  TodoBloc _todoBloc;
+  late TodoBloc _todoBloc;
 
   @override
   void initState() {

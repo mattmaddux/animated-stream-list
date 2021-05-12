@@ -4,7 +4,7 @@ class Todo implements Comparable<Todo> {
   DateTime _changedAt;
   bool _done;
 
-  Todo({this.title, this.content})
+  Todo({required this.title, required this.content})
       : _changedAt = DateTime.now(),
         _done = false;
 

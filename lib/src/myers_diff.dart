@@ -55,7 +55,8 @@ PathNode? _buildPath<E>(List<E> oldList, List<E> newList, Equalizer? equals) {
   final int max = oldSize + newSize + 1;
   final size = (2 * max) + 1;
   final int middle = size ~/ 2;
-  final List<PathNode?> diagonal = List(size);
+  // final List<PathNode?> diagonal = List(size);
+  final List<PathNode?> diagonal = List.filled(size, null, growable: false);
 
   diagonal[middle + 1] = Snake(0, -1, null);
   for (int d = 0; d < max; d++) {
@@ -105,7 +106,7 @@ PathNode? _buildPath<E>(List<E> oldList, List<E> newList, Equalizer? equals) {
 List<Diff> _buildPatch<E>(PathNode? path, List<E> oldList, List<E> newList) {
   if (path == null) throw ArgumentError("path is null");
 
-  final List<Diff> diffs = List();
+  final List<Diff> diffs = [];
   if (path.isSnake()) {
     path = path.previousNode;
   }
